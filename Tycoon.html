@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tycoon class</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f6fc;
+      color: #333;
+    }
+    .header {
+      background-color: #0056b3;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+    .back-link {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .content {
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+      background-color: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      margin-top: 30px;
+    }
+    h2 {
+      color: #0056b3;
+    }
+    ul, ol {
+      padding-left: 20px;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin: 10px 0;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    .nav-section {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .nav-section a {
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a href="/home.html" class="back-link">กลับหน้าหลัก</a>
+    <h1>ขั้นตอนการส้ราง map Tycoon</h1>
+  </header>
+
+
+
+  
+  <main class="content">
+    <div class="section">
+      <h2>บทที่ 1: ติดตั้ง Roblox Studio</h2>
+      <ol>
+        <li>ดาวน์โหลด Roblox Studio จาก <a href="https://www.roblox.com/create" target="_blank">roblox.com/create</a></li>
+        <li>ติดตั้งและสร้างโปรเจ็ค "Baseplate"</li>
+      </ol>
+      <img src="images/baseplate.png" alt="Baseplate">
+    </div>
+
+    <div class="section">
+      <h2>บทที่ 2: การเพิ่มพื้นฐานของแมพ</h2>
+      <ul>
+        <li>ใช้ Part จาก Toolbox หรือแถบ Insert Object</li>
+        <li>ลากวาง Part ไปยัง Workspace</li>
+      </ul>
+      <img src="images/insert-part.png" alt="Insert Part">
+    </div>
+
+    <div class="section">
+      <h2>บทที่ 3: การเคลื่อนย้ายและปรับแต่ง Part</h2>
+      <ol>
+        <li>เลือก Part ที่ต้องการ</li>
+        <li>ใช้ Move / Scale / Rotate เพื่อจัดตำแหน่ง</li>
+        <li>ตั้งค่าสี วัสดุ และการตรึง (Anchor) จาก Properties</li>
+      </ol>
+      <img src="images/move-scale.png" alt="Move and Scale Part">
+    </div>
+
+    <div class="section">
+      <h2>บทที่ 4: ตั้งจุดเริ่มเกม (SpawnLocation)</h2>
+      <ul>
+        <li>เลือก SpawnLocation จาก Toolbox</li>
+        <li>วางลงในแมพ แล้วทดลองกด Play เพื่อดูผลลัพธ์</li>
+      </ul>
+      <img src="images/spawn.png" alt="Spawn Location">
+    </div>
+
+    <div class="nav-section">
+      <a href="map-basics.html">ระดับ Basic</a> |
+      <a href="inter.html">ระดับ Intermediate</a> |
+      <a href="advance.html">ระดับ Advanced</a>
+    </div>
+  </main>
+</body>
+</html>

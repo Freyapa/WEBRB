@@ -9,7 +9,7 @@
 
 body {
   font-family: 'Kanit', sans-serif;
-  background: url('src/EQ\ Learning\ Roblox\ Craeter.gif') no-repeat center center fixed;
+  background: url('/src/EQ\ Learning\ Roblox\ Craeter.gif') no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
   display: flex;
