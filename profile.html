@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>โปรไฟล์ของฉัน - Roblox Map</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header><h1>โปรไฟล์ของฉัน</h1></header>
+  <main>
+    <div id="profileInfo">
+      <p><strong>ชื่อผู้ใช้:</strong> <span id="profileUsername"></span></p>
+    </div>
+    <button id="logoutBtn">ออกจากระบบ</button>
+  </main>
+
+  <script>
+    // ตรวจสอบว่าล็อกอินอยู่ไหม
+    if (localStorage.getItem('loggedIn') !== 'true') {
+      window.location.href = 'login.html'; // กลับไปหน้า Login ถ้ายังไม่ Login
+    } else {
+      // แสดงชื่อผู้ใช้
+      document.getElementById('profileUsername').innerText = localStorage.getItem('username');
+    }
+
+    // Logout
+    document.getElementById('logoutBtn').addEventListener('click', function() {
+      localStorage.removeItem('loggedIn');
+      localStorage.removeItem('username');
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>

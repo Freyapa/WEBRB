@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Main Roblox for Creators</title>
+  <link rel="stylesheet" href="home.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+ <header class="header">
+  <div class="logo-section">
+    <img src="src/EQ.png" alt="Logo" class="logo" style="size: 100px;">
+    <div class="title-group">
+      <nav class="subnav">
+        <img src="src/URE.png" alt="Sub Logo" class="sub-logo">
+        <a href="/clause.html" style="transform: matrix(1);">ข้อมูลการเรียนรู้</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="menu-toggle">
+    <button onclick="toggleMenu()">☰ เมนู</button>
+    <div id="dropdownMenu" class="dropdown-menu">
+      <a href="setting.html" onclick="playClickSound()">ข้อมูลส่วนตัว</a>
+      <button onclick="logout()">ออกจากระบบ</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <main class="content">
+  <!-- Tycoon Card -->
+  <section class="card">
+    <h2>How to make Tycoon</h2>
+    <p>หลักสูตรการสร้างแมพ Tycoon เบื้องต้น</p>
+    <img src="src/Ty coon.gif" alt="Tycoon Image">
+    <a href="pages/Tycoon.html" onclick="playClickSound()">คลิกเพื่อเรียน</a>
+  </section>
+
+  <!-- Battleground Card -->
+  <section class="card">
+    <h2>ขั้นตอนการสร้างเเมพ Battleground</h2>  
+    <p>หลักสูตรการสร้างแมพ Battlegroud</p>
+    <img src="src/Battlegroud.jpeg" alt="Battleground Image"/>
+    <a href="/pages/Battleground.html" onclick="playClickSound()">คลิกเพื่อเรียน</a>
+  </section>
+
+  <!-- Obby Card -->
+  <section class="card">
+    <h2>ขั้นตอนการสร้างเเมพ Obby</h2>
+    <p>หลักสูตรการสร้างแมพ Obby</p>
+    <img src="src/Obby.jpg" alt="Obby Image">
+    <a href="pages/Obby.html" onclick="playClickSound()">คลิกเพื่อเรียน</a>
+  </section>
+</main>
+
+  <!-- Sound -->
+  <audio id="clickSound" src="click.mp3"></audio>
+ <script>
+  function playClickSound() {
+    document.getElementById("clickSound").play();
+  }
+
+  function toggleMenu() {
+    const menu = document.getElementById("dropdownMenu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+
+  function logout() {
+    alert("ออกจากระบบแล้ว");
+    // ทำการ logout จริงที่นี่
+  }
+
+  // ปิดเมนูเมื่อคลิกที่อื่น
+  document.addEventListener("click", function(event) {
+    const menu = document.getElementById("dropdownMenu");
+    const button = document.querySelector(".menu-toggle button");
+    if (!event.target.closest(".menu-toggle")) {
+      menu.style.display = "none";
+    }
+  });
+</script>
+<!-- Footer -->
+
+
+<footer class="footer">
+  <p>ติดต่อโรงเรียน: โรงเรียนต้นเเบบนวัตกรรมเเละเทคโนโลยี (EQ.science Learning Center) | โทร: 081-491-9359 | เพลินใจ3 เยื้อง บขส.2 ถบายพาส-ทับมา จ.ระยอง 21000</p>
+</footer>
+
+  <script src="home.js"></script>
+</body>
+</html>

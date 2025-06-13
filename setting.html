@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ตั้งค่า</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f4f8;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #2d89ef;
+      padding: 15px 30px;
+      color: white;
+    }
+
+    .topbar h1 {
+      font-size: 1.4em;
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+      max-width: 1000px;
+      margin: 20px auto;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      background-color: white;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #e3eaf2;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tab {
+      padding: 15px 20px;
+      cursor: pointer;
+      border-bottom: 1px solid #ccc;
+      transition: background 0.2s;
+    }
+
+    .tab:hover {
+      background-color: #d0d7e1;
+    }
+
+    .tab.active {
+      background-color: #ffffff;
+      font-weight: bold;
+      border-left: 5px solid #2d89ef;
+    }
+
+    .content {
+      flex: 1;
+      padding: 30px;
+    }
+
+    h2 {
+      color: #444;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      background-color: #e53935;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #c62828;
+    }
+
+    .profile-box {
+      background-color: #f7f9fc;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin: 30px auto 0;
+      text-decoration: none;
+      color: #2d89ef;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <!-- 🔝 Topbar -->
+  <div class="topbar">
+    <h1>ตั้งค่าผู้ใช้</h1>
+    <a href="home.html" title="กลับหน้าหลัก" style="color:white;">🏠</a>
+  </div>
+
+  <!-- 📁 Settings Panel with Tabs -->
+  <div class="container">
+    <div class="sidebar">
+      <div class="tab active" data-tab="language">🌐 ภาษา</div>
+      <div class="tab" data-tab="background">🎨 พื้นหลัง</div>
+      <div class="tab" data-tab="profile">👤 ข้อมูลส่วนตัว</div>
+      <div class="tab" data-tab="logout">🚪 ออกจากระบบ</div>
+    </div>
+
+    <div class="content">
+      <!-- Tab: Language -->
+      <div class="tab-content" id="language" style="display: block;">
+        <h2>🌐 เลือกภาษา</h2>
+        <select id="languageSelect">
+          <option value="th">ไทย</option>
+          <option value="en">English</option>
+          <option value="jp">日本語</option>
+        </select>
+      </div>
+
+      <!-- Tab: Background -->
+      <div class="tab-content" id="background" style="display: none;">
+        <h2>🎨 เปลี่ยนพื้นหลัง</h2>
+        <select onchange="changeBackground(this.value)">
+          <option value="#f0f4f8">ฟ้าอ่อน</option>
+          <option value="#ffffff">ขาว</option>
+          <option value="#dff0d8">เขียวอ่อน</option>
+          <option value="#ffe0b2">ส้มอ่อน</option>
+          <option value="#e3f2fd">น้ำเงินอ่อน</option>
+        </select>
+      </div>
+
+      <!-- Tab: Profile -->
+      <div class="tab-content" id="profile" style="display: none;">
+        <h2>👤 ข้อมูลส่วนตัว</h2>
+        <div class="profile-box">
+          <p><strong>ชื่อผู้ใช้:</strong> <span id="userName">ยังไม่ได้เข้าสู่ระบบ</span></p>
+          <p><strong>อีเมล:</strong> user@example.com</p>
+          <p><strong>ระดับ:</strong> ผู้เรียน</p>
+        </div>
+      </div>
+
+      <!-- Tab: Logout -->
+      <div class="tab-content" id="logout" style="display: none;">
+        <h2>🚪 ออกจากระบบ</h2>
+        <button onclick="logout()">ออกจากระบบ</button>
+      </div>
+    </div>
+  </div>
+
+  <a href="home.html" class="back-link">← กลับหน้าหลัก</a>
+
+  <script>
+    // โหลดชื่อผู้ใช้จาก sessionStorage
+    document.addEventListener("DOMContentLoaded", function () {
+      const user = sessionStorage.getItem("loggedInUser");
+      if (user) {
+        document.getElementById("userName").textContent = user;
+      }
+    });
+
+    // เปลี่ยนพื้นหลัง
+    function changeBackground(color) {
+      document.body.style.backgroundColor = color;
+    }
+
+    // ออกจากระบบ
+    function logout() {
+      sessionStorage.removeItem("loggedInUser");
+      window.location.href = "login.html";
+    }
+
+    // จัดการการเปลี่ยนแท็บ
+    const tabs = document.querySelectorAll(".tab");
+    const contents = document.querySelectorAll(".tab-content");
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+
+        contents.forEach(content => {
+          content.style.display = content.id === tab.dataset.tab ? "block" : "none";
+        });
+      });
+    });
+  </script>
+</body>
+</html>

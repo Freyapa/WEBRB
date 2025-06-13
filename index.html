@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ลงทะเบียน Roblox Map Creator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio id="clickSound" src="mouse-click-331781.mp3" preload="auto"></audio>
+
+    <header>
+        <h1>ลงทะเบียนผู้ใช้</h1>
+    </header>
+
+    <main>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="username">ชื่อผู้ใช้:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">อีเมล:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">รหัสผ่าน:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" id="submitBtn">ลงทะเบียน</button>
+            </div>
+        </form>
+
+        <p id="statusMessage"></p>
+    </main>
+    <script src="app.js"></script>
+    <!-- Navigation Bar -->
+<nav class="navbar">
+</nav>
+</body>
+</html>

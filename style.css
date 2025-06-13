@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Kanit', sans-serif;
+  background: url('src/EQ\ Learning\ Roblox\ Craeter.gif') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* มืดครึ่งจอเพื่อให้มองเห็นฟอร์มชัด */
+  z-index: 0;
+}
+
+header h1 {
+  color: #fff;
+  font-size: 32px;
+  margin-bottom: 20px;
+  z-index: 1;
+  text-shadow: 2px 2px 5px #000;
+}
+
+/* Main form container */
+main {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 400px;
+  z-index: 1;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  transition: border 0.3s;
+}
+input:focus {
+  border-color: #3b82f6;
+}
+
+/* Button Style */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+button:hover {
+  background-color: #2563eb;
+}
+
+/* Status Message */
+#statusMessage {
+  margin-top: 15px;
+  color: red;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Link to Register/Login */
+main p a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+main p a:hover {
+  text-decoration: underline;
+}
+
+/* Navbar (ถ้ามี) */
+.navbar {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  header h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+  main {
+    padding: 20px;
+  }
+}
